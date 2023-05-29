@@ -1,25 +1,80 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
-function App() {
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/zoom";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import "./styles.css";
+
+// import required modules
+import { Zoom, Navigation, Pagination } from "swiper";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Swiper
+        style={{
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "#fff",
+        }}
+        zoom={true}
+        navigation={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Zoom, Navigation, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="swiper-zoom-container">
+            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-zoom-container">
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-zoom-container">
+            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-zoom-container">
+            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-zoom-container">
+            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-zoom-container">
+            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-zoom-container">
+            <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-zoom-container">
+            <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-zoom-container">
+            <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 }
-
-export default App;
