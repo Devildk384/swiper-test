@@ -21,6 +21,7 @@ export default function App() {
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
         }}
+        loop={true}
         zoom={true}
         navigation={true}
         pagination={{
