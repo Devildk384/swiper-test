@@ -21,13 +21,14 @@ export default function App() {
   const isLandscape = () => window.matchMedia('(orientation:landscape)').matches,
   [orientation, setOrientation] = useState(isLandscape() ? myScreenOrientation.lock("portrait") : 'portrait'),
   onWindowResize = () => {              
-    clearTimeout(window.resizeLag)
-    window.resizeLag = setTimeout(() => {
+    // clearTimeout(window.resizeLag)
+    // window.resizeLag = setTimeout(() => {
 
 
-      delete window.resizeLag                       
-      setOrientation(isLandscape() ? myScreenOrientation.lock("portrait") : 'portrait')
-    }, 200)
+    //   delete window.resizeLag                       
+    //   setOrientation(isLandscape() ? myScreenOrientation.lock("portrait") : 'portrait')
+    // }, 200)
+    myScreenOrientation.lock("portrait")
   }
 
 useEffect(() => (
