@@ -14,6 +14,13 @@ import "swiper/css/pagination";
 import { Zoom, Navigation, Pagination } from "swiper";
 
 export default function App() {
+  useEffect(() => {
+    var myScreenOrientation = window.screen.orientation;
+    myScreenOrientation.lock("portrait");
+  // document.documentElement.requestFullScreen();
+  // screen.orientation.lock("portrait-primary");
+  }, [])
+  
   return (
     <>
       <Swiper
