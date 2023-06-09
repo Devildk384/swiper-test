@@ -12,17 +12,29 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Zoom, Navigation, Pagination } from "swiper";
+import { render } from 'react-dom'
 
+const rootNode = document.getElementById('root')
 export default function App() {
-  useEffect(() => {
-    var myScreenOrientation = window.screen.orientation;
-    myScreenOrientation.lock("portrait");
-  // document.documentElement.requestFullScreen();
-  // screen.orientation.lock("portrait-primary");
-  }, [])
+  const isLandscape = () => window.matchMedia('(orientation:landscape)').matches,
+  [orientation, setOrientation] = useState(isLandscape() ? 'landscape' : 'portrait'),
+  onWindowResize = () => {              
+    clearTimeout(window.resizeLag)
+    window.resizeLag = setTimeout(() => {
+      delete window.resizeLag                       
+      setOrientation(isLandscape() ? 'landscape' : 'portrait')
+    }, 200)
+  }
+
+useEffect(() => (
+onWindowResize(),
+window.addEventListener('resize', onWindowResize),
+() => window.removeEventListener('resize', onWindowResize)
+),[])
   
   return (
     <>
+    {orientation}
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
