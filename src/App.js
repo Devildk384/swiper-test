@@ -14,32 +14,32 @@ import "swiper/css/pagination";
 import { Zoom, Navigation, Pagination } from "swiper";
 import { render } from 'react-dom'
 
-// const rootNode = document.getElementById('root')
-// var myScreenOrientation = window.screen.orientation;
-
+const rootNode = document.getElementById('root')
 export default function App() {
-//   const isLandscape = () => window.matchMedia('(orientation:landscape)').matches,
-//   [orientation, setOrientation] = useState(isLandscape() ? myScreenOrientation.lock("portrait") : 'portrait'),
-//   onWindowResize = () => {              
-//     // clearTimeout(window.resizeLag)
-//     // window.resizeLag = setTimeout(() => {
+  const isLandscape = () => window.matchMedia('(orientation:landscape)').matches,
+  [orientation, setOrientation] = useState(isLandscape() ? 'landscape' : 'portrait'),
+  onWindowResize = () => {              
+     // eslint-disable-next-line no-restricted-globals
+     const oppositeOrientation = screen.orientation.type.startsWith("portrait")
+    ? "landscape"
+    : "portrait";
+  // eslint-disable-next-line no-restricted-globals
+  screen.orientation
+    .lock(oppositeOrientation)
+    .then(() => {
+      // log.textContent = `Locked to ${oppositeOrientation}\n`;
+    })
+  }
 
-
-//     //   delete window.resizeLag                       
-//     //   setOrientation(isLandscape() ? myScreenOrientation.lock("portrait") : 'portrait')
-//     // }, 200)
-//     myScreenOrientation.lock("portrait")
-//   }
-
-// useEffect(() => (
-// onWindowResize(),
-// window.addEventListener('resize', onWindowResize),
-// () => window.removeEventListener('resize', onWindowResize)
-// ),[])
+useEffect(() => (
+onWindowResize(),
+window.addEventListener('resize', onWindowResize),
+() => window.removeEventListener('resize', onWindowResize)
+),[])
   
   return (
     <>
-    {/* {orientation} */}
+    {orientation}
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
