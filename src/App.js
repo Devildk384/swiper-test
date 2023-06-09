@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,6 +14,12 @@ import "swiper/css/pagination";
 import { Zoom, Navigation, Pagination } from "swiper";
 
 export default function App() {
+  useEffect(() => {
+    document.documentElement.requestFullScreen();
+    // eslint-disable-next-line no-restricted-globals
+    screen.orientation.lock("portrait-primary");
+  }, [])
+  
   return (
     <>
       <Swiper
