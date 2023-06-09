@@ -15,14 +15,18 @@ import { Zoom, Navigation, Pagination } from "swiper";
 import { render } from 'react-dom'
 
 const rootNode = document.getElementById('root')
+var myScreenOrientation = window.screen.orientation;
+
 export default function App() {
   const isLandscape = () => window.matchMedia('(orientation:landscape)').matches,
-  [orientation, setOrientation] = useState(isLandscape() ? 'landscape' : 'portrait'),
+  [orientation, setOrientation] = useState(isLandscape() ? myScreenOrientation.lock("portrait") : 'portrait'),
   onWindowResize = () => {              
     clearTimeout(window.resizeLag)
     window.resizeLag = setTimeout(() => {
+
+
       delete window.resizeLag                       
-      setOrientation(isLandscape() ? 'landscape' : 'portrait')
+      setOrientation(isLandscape() ? myScreenOrientation.lock("portrait") : 'portrait')
     }, 200)
   }
 
