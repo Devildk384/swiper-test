@@ -3,10 +3,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-// import "swiper/css";
+import "swiper/css";
 // import "swiper/css/zoom";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // import "./styles.css";
 
