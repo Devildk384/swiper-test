@@ -12,9 +12,7 @@ code {
     monospace;
 }
 
-.swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden.mySwiper {
-  height: 100vh;
-}
+
 
 /* @media only screen and (orientation:portrait) {
   body {
@@ -22,7 +20,9 @@ code {
     transform: rotate(90deg);
   }
 } */
-
+.swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden.mySwiper {
+  height: 100vh;
+}
 .swiper-zoom-container {
   align-items: center;
   display: flex;
