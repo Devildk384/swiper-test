@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 
 // import "./styles.css";
 
+
 // import required modules
 import { Zoom, Navigation, Pagination } from "swiper";
 
